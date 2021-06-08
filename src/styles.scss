@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'variables';
+
+.customBorder{
+    border: 4px solid #333;
+    border-radius: 15px;
+}
+
+body{
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+}
+
+.proceedButton{
+    text-align: center;
+    display: block;
+    width: 190px;
+    padding: 10px;
+    color: #fff !important;
+    text-decoration: none !important;
+    background: $buttonColor;
+    transition: .2s all;
+    margin: 30px auto;
+    border: none !important;
+    &:hover{
+        background-color: $ButtonHoverColor;
+    }
+}

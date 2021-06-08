@@ -1,0 +1,56 @@
+<main class="row justify-content-center">
+    <section class="col-md-7 col-12 p-4 customBorder">
+
+        <!-- Step 1 Progress -->
+        <app-progress-line [step]="1"></app-progress-line>
+
+        <!-- HEADER -->
+        <div class="my-5 text-center">
+            <h2>Ticket Information</h2>
+        </div>
+
+        <!-- Member Selection -->
+        <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+            <div class="form-group row">
+                <label class="col-md-6 col-form-label" for="select1"><b>Members *</b></label>
+                <div class="col-md-6">
+                    <select ngModel='1' name="members" id="select1" required>
+                        <option value="1">Individual</option>
+                        <option value="3">3 Members</option>
+                        <option value="5">5 Members</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Race Type -->
+            <div class="form-group row">
+                <label class="col-md-6 col-form-label" for="select2"><b>Race Type *</b></label>
+                <div class="col-md-6">
+                    <select ngModel='2km'  name="raceType" id="select2" required>
+                        <option value="2km">Aquaman Obstacle Course : 2km</option>
+                        <option value="600m">Aquaman Sprint Obstacle Course : 600 m</option>
+                        <option value="600m_kids">Aquaman Mini Obstacle course : 600 m for kids only with minimum age of 10 yrs</option>
+                       
+                    </select>
+                </div>
+            </div>
+
+            <!-- Name -->
+            <div class="form-group row">
+                <label class="col-md-6 col-form-label" for="input1"><b>Name *</b></label>
+                <div class="col-md-6">
+                    <input ngModel name="name" type="text" id="input1" required>
+                </div>
+            </div>
+
+            <!-- proceed button -->
+            <div class="my-5">
+                <button class="proceedButton" type="submit">Proceed to next step</button>
+            </div>
+        </form>
+
+        <!-- Step 1 Progress -->
+        <app-progress-line [step]="1"></app-progress-line>
+
+    </section>
+</main>
