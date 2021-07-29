@@ -11,6 +11,7 @@ import { PersonInfoComponent } from './pages/person-info/person-info.component';
 import { FormsModule } from '@angular/forms';
 import { ConfirmationComponent } from './pages/confirmation/confirmation.component';
 import { PaymentComponent } from './pages/payment/payment.component';
+import { PaymentResultComponent } from './pages/payment-result/payment-result.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { PaymentComponent } from './pages/payment/payment.component';
     TicketInfoComponent,
     PersonInfoComponent,
     ConfirmationComponent,
-    PaymentComponent
+    PaymentComponent,
+    PaymentResultComponent
   ],
   imports: [
     BrowserModule,
