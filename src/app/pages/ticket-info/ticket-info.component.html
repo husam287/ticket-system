@@ -1,5 +1,5 @@
-<main class="row justify-content-center">
-    <section class="col-md-7 col-12 p-4 customBorder">
+<section class="row justify-content-center">
+    <main class="col-md-7 col-12 p-4 customBorder">
 
         <!-- Step 1 Progress -->
         <app-progress-line [step]="1"></app-progress-line>
@@ -9,10 +9,14 @@
             <h2>Ticket Information</h2>
         </div>
 
-        <!-- Member Selection -->
+        <!-- Info Form -->
         <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+
+            <!-- Member Selection -->
             <div class="form-group row">
-                <label class="col-md-6 col-form-label" for="select1"><b>Members *</b></label>
+                <label class="col-md-6 col-form-label" for="select1">
+                    <b>Members *</b>
+                </label>
                 <div class="col-md-6">
                     <select ngModel='1' name="members" id="select1" required>
                         <option value="1">Individual</option>
@@ -24,7 +28,9 @@
 
             <!-- Race Type -->
             <div class="form-group row">
-                <label class="col-md-6 col-form-label" for="select2"><b>Race Type *</b></label>
+                <label class="col-md-6 col-form-label" for="select2">
+                    <b>Race Type *</b>
+                </label>
                 <div class="col-md-6">
                     <select ngModel='2km'  name="raceType" id="select2" required>
                         <option value="2km">Aquaman Obstacle Course : 2km</option>
@@ -37,7 +43,9 @@
 
             <!-- Name -->
             <div class="form-group row">
-                <label class="col-md-6 col-form-label" for="input1"><b>Name *</b></label>
+                <label class="col-md-6 col-form-label" for="input1">
+                    <b>Name *</b>
+                </label>
                 <div class="col-md-6">
                     <input ngModel name="name" type="text" id="input1" required>
                 </div>
@@ -52,5 +60,5 @@
         <!-- Step 1 Progress -->
         <app-progress-line [step]="1"></app-progress-line>
 
-    </section>
-</main>
+    </main>
+</section>
