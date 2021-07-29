@@ -10,6 +10,7 @@ import { TicketInfoComponent } from './pages/ticket-info/ticket-info.component';
 import { PersonInfoComponent } from './pages/person-info/person-info.component';
 import { FormsModule } from '@angular/forms';
 import { ConfirmationComponent } from './pages/confirmation/confirmation.component';
+import { PaymentComponent } from './pages/payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ConfirmationComponent } from './pages/confirmation/confirmation.compone
     ProgressLineComponent,
     TicketInfoComponent,
     PersonInfoComponent,
-    ConfirmationComponent
+    ConfirmationComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,

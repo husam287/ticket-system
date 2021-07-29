@@ -1,0 +1,37 @@
+@import "variables";
+
+#descSection {
+    #payNowButton {
+        button {
+            width: 250px;
+        }
+    }
+}
+
+#tableSection {
+    table {
+        cursor: default;
+        .redHead {
+            background-color: $tableColor !important;
+        }
+        td,
+        th {
+            height: 20px;
+            padding: 8px;
+            text-align: right;
+            &:first-child {
+                text-align: left;
+            }
+        }
+        .blackBorderBottom{
+            border-bottom: #000 solid 4px;
+        }
+        .redBorderBottom{
+            border-bottom: $tableColor solid 4px;
+        }
+    }
+
+    tfoot{
+        font-weight: 700;
+    }
+}
