@@ -9,6 +9,7 @@ import { ProgressLineComponent } from './components/progress-line/progress-line.
 import { TicketInfoComponent } from './pages/ticket-info/ticket-info.component';
 import { PersonInfoComponent } from './pages/person-info/person-info.component';
 import { FormsModule } from '@angular/forms';
+import { ConfirmationComponent } from './pages/confirmation/confirmation.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     ProgressLineComponent,
     TicketInfoComponent,
-    PersonInfoComponent
+    PersonInfoComponent,
+    ConfirmationComponent
   ],
   imports: [
     BrowserModule,
