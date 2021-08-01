@@ -11,7 +11,7 @@
         <div>
             <p>1 tickets</p>
             <p>
-                An email has been sent to ss@ss with a link to this payment page, you can come back to make the payment
+                An email has been sent to {{tickets[0].email}} with a link to this payment page, you can come back to make the payment
                 at a
                 later time.
                 This registration will no longer be valid if the payment is not made within five days.
@@ -20,7 +20,7 @@
     </main>
 
     <div id="payNowButton" class="col-md-7 col-12">
-        <button class="proceedButton m-0 mx-5">Pay Online Below</button>
+        <button class="proceedButton m-0 mx-5" (click)="goToPay()">Pay Online Below</button>
     </div>
 </section>
 
@@ -37,11 +37,11 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="blackBorderBottom">
-                    <th scope="row">1 Ticket - (Hossam Sherif)</th>
+                <tr *ngFor="let ticket of tickets" class="blackBorderBottom">
+                    <th scope="row">1 Ticket - ({{ticket.name}})</th>
                     <td>1</td>
-                    <td>EGP 850.0</td>
-                    <td>EGP 850.0</td>
+                    <td>EGP {{ticketPrice}}</td>
+                    <td>EGP {{ticketPrice}}</td>
                 </tr>
             </tbody>
             <tfoot class="text-uppercase">
@@ -49,7 +49,7 @@
                     <td></td>
                     <td></td>
                     <td class="redBorderBottom text-left">Total Due</td>
-                    <td class="redBorderBottom text-right">EGP 850.0</td>
+                    <td class="redBorderBottom text-right">EGP {{totalMoney}}</td>
                 </tr>
             </tfoot>
         </table>
@@ -65,7 +65,7 @@
 
 <!-- PAYMENT SECTION -->
 <hr>
-<section class="row justify-content-center">
+<section #paymentSection class="row justify-content-center">
     <main class="col-md-7 col-12 p-4">
         <!-- HEADER -->
         <div class="text-center">
@@ -73,8 +73,9 @@
         </div>
 
         <!-- Credit Card Form -->
-        <div style="height: 300px;">
+        <div style="height: 300px;" class="text-center">
             <!-- PAYMENT CARD SNIPPET HERE -->
+            <button class="btn btn-success mt-4" (click)="pay()">Pay</button>
         </div>
 
     </main>

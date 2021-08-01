@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { FormService } from 'src/app/providers/form.service';
 
 
 @Component({
@@ -16,21 +17,36 @@ export class PersonInfoComponent implements OnInit {
   yearMinLimit = 1910;
 
   /* T-shirt Stuff */
-  sizes = ['xs','s','m','l','xl','xxl']
-  
+  sizes = ['xs', 's', 'm', 'l', 'xl', 'xxl']
+
   /* Promo Code */
   havePromo = false;
 
-  constructor(private router:Router) { }
+  /* Ticket Info */
+  totalNumberOfMembers = 1;
+  currentNumberTicket = 1;
+  tickets = [];
+
+  constructor(private router: Router, private formService: FormService) { }
 
   ngOnInit(): void {
+    this.formService.clearTickets();
+    
     this.makeArrayOfYears();
+    this.totalNumberOfMembers = this.formService.form['members'];
+    this.currentNumberTicket = this.formService.form['members'];
   }
 
   onSubmit(form: NgForm) {
-    console.log(`form2`, form);
-    this.router.navigateByUrl('/confirmation')
+    this.currentNumberTicket--;
+    this.tickets.push(form.value)
+    form.resetForm();
 
+    if (this.currentNumberTicket === 0) {
+      this.formService.addToForm({ tickets: this.tickets })
+      console.log("Form Now",this.formService.form)
+      this.router.navigateByUrl('/confirmation')
+    }
   }
 
   /* Fill Years Array */

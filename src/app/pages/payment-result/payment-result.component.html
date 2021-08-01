@@ -7,7 +7,7 @@
             </div>
     
             <div class="col-md-12 mt-3">
-                <h3>Sorry, hossam sherif , your payment was not successful.</h3>
+                <h3>Sorry, {{tickets[0].name}} , your payment was not successful.</h3>
                 <h4 class="my-3">Aquaman</h4>
                 <h5>Amount Due: EGP 850.0</h5>
                 <p>
@@ -32,11 +32,11 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="blackBorderBottom">
-                    <th scope="row">1 Ticket - (Hossam Sherif)</th>
+                <tr *ngFor="let ticket of tickets" class="blackBorderBottom">
+                    <th scope="row">1 Ticket - ({{ticket.name}})</th>
                     <td>1</td>
-                    <td>EGP 850.0</td>
-                    <td>EGP 850.0</td>
+                    <td>EGP {{ticketPrice}}</td>
+                    <td>EGP {{ticketPrice}}</td>
                 </tr>
             </tbody>
             <tfoot class="text-uppercase">

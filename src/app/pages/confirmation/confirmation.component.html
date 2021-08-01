@@ -10,12 +10,12 @@
         </div>
 
         <!-- Ticket prices -->
-        <div class="row dashedBorder">
+        <div *ngFor="let ticket of tickets" class="row dashedBorder">
             <div class="col-4 text-center">
-                <b>Tickets - (Hossam Sherif)</b>
+                <b>Tickets - ({{ticket.name}})</b>
             </div>
             <div class="col-5 text-center">
-                <span>EGP 850</span>
+                <span>EGP {{ticketPrice}}</span>
             </div>
             <div class="col-3 text-right">
                 <a routerLink="/">x</a>
@@ -28,7 +28,7 @@
                 <b>Total</b>
             </div>
             <div class="col-6 text-center">
-                <span>EGP 850</span>
+                <span>EGP {{totalMoney}}</span>
             </div>
             
         </div>
@@ -38,6 +38,6 @@
 
 <section class="row justify-content-center">
     <div class="col-md-7 col-12">
-        <button class="sucessButton">Proceed to payment</button>
+        <button class="sucessButton" type="button" (click)="onSubmit()">Proceed to payment</button>
     </div>
 </section>

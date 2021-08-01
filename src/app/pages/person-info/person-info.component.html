@@ -9,8 +9,13 @@
             <h2>Ticket Information</h2>
         </div>
 
+        <!-- Ticket Number  -->
+        <div class="col-md-12 text-center">
+            <b>Ticket number: {{totalNumberOfMembers-currentNumberTicket+1}}</b>
+        </div>
+
         <!-- Info2 Form -->
-        <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+        <form class="mt-4" #form="ngForm" (ngSubmit)="onSubmit(form)">
 
             <!-- Name -->
             <div class="form-group row">
