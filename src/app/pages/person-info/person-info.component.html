@@ -5,7 +5,7 @@
         <app-progress-line [step]="1"></app-progress-line>
 
         <!-- HEADER -->
-        <div class="my-5 text-center">
+        <div #headerOfTheForm class="my-5 text-center">
             <h2>Ticket Information</h2>
         </div>
 
@@ -23,7 +23,8 @@
                     <b>Name *</b>
                 </label>
                 <div class="col-md-6">
-                    <input ngModel name="name" type="text" id="input1" required>
+                    <input [ngClass]="Error_Flag&&!name.valid&&ERROR_INPUT_CLASS" [ngModel]="initValue['name']" name="name" #name="ngModel"
+                        type="text" id="input1" required>
                 </div>
             </div>
 
@@ -33,7 +34,8 @@
                     <b>Gender *</b>
                 </label>
                 <div class="col-md-6">
-                    <select ngModel name="gender" id="select1" required>
+                    <select [ngClass]="Error_Flag&&!gender.valid&&ERROR_INPUT_CLASS" [ngModel]="initValue['gender']" name="gender"
+                        #gender="ngModel" id="select1" required>
                         <option value="male">Male</option>
                         <option value="female">female</option>
                     </select>
@@ -46,7 +48,8 @@
                     <b>Years of Birth *</b>
                 </label>
                 <div class="col-md-6">
-                    <select ngModel name="yearOfBirth" id="select2" required>
+                    <select [ngClass]="Error_Flag&&!yearOfBirth.valid&&ERROR_INPUT_CLASS" [ngModel]="initValue['yearOfBirth']" name="yearOfBirth"
+                        #yearOfBirth="ngModel" id="select2" required>
                         <option *ngFor="let year of years" [value]="year">
                             {{year}}
                         </option>
@@ -60,7 +63,8 @@
                     <b>Email *</b>
                 </label>
                 <div class="col-md-6">
-                    <input ngModel name="email" type="email" id="input3" required>
+                    <input [ngClass]="Error_Flag&&!email.valid&&ERROR_INPUT_CLASS" [ngModel]="initValue['email']" name="email" #email="ngModel"
+                        type="email" email id="input3" required>
                 </div>
             </div>
 
@@ -70,7 +74,8 @@
                     <b>Phone Number *</b>
                 </label>
                 <div class="col-md-6">
-                    <input ngModel name="phone" type="tel" id="input4" required>
+                    <input [ngClass]="Error_Flag&&!phone.valid&&ERROR_INPUT_CLASS" [ngModel]="initValue['phone']" name="phone" #phone="ngModel"
+                        type="tel" pattern="[0-9]{11}" id="input4" required>
                 </div>
             </div>
 
@@ -80,7 +85,8 @@
                     <b>T-shirt Size *</b>
                 </label>
                 <div class="col-md-6">
-                    <select ngModel name="shirtSize" id="select3" required>
+                    <select [ngClass]="Error_Flag&&!shirtSize.valid&&ERROR_INPUT_CLASS" [ngModel]="initValue['shirtSize']" name="shirtSize"
+                        #shirtSize="ngModel" id="select3" required>
                         <option class="text-uppercase" *ngFor="let size of sizes" [value]="size">
                             {{size}}
                         </option>
@@ -94,7 +100,7 @@
                     <b>Any injuries, if yes please mention</b>
                 </label>
                 <div class="col-md-6">
-                    <input ngModel name="comment" type="text" id="input5">
+                    <input [ngModel]="initValue['comment']" name="comment" type="text" id="input5">
                 </div>
             </div>
 
@@ -104,7 +110,8 @@
                     <b>Swimming pace per 100m *</b>
                 </label>
                 <div class="col-md-6">
-                    <select ngModel name="pace" id="select4" required>
+                    <select [ngClass]="Error_Flag&&!pace.valid&&ERROR_INPUT_CLASS" [ngModel]="initValue['pace']" name="pace" #pace="ngModel"
+                        id="select4" required>
                         <option value="1">below 1 min 30 secs</option>
                         <option value="2">below 2</option>
                         <option value="3">below 3</option>
@@ -121,7 +128,7 @@
                     <b>Promo Code</b>
                 </label>
                 <div class="col-md-6">
-                    <input ngModel name="promoCode" type="text" id="input6" placeholder="Promo Code">
+                    <input [ngModel]="initValue['promoCode']" name="promoCode" type="text" id="input6" placeholder="Promo Code">
                 </div>
             </div>
 
