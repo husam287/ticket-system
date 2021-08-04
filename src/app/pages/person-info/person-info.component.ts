@@ -42,7 +42,6 @@ export class PersonInfoComponent implements OnInit {
     this.totalNumberOfMembers = this.formService.form['members'];
     this.currentNumberTicket = this.formService.form['members'];
     this.initValue = this.formService.form['tickets'] ? this.formService.form['tickets'][0] : {};
-    console.log("init", this.initValue)
   }
 
   onSubmit(form: NgForm) {
