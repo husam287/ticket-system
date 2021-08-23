@@ -11,11 +11,11 @@ import { TicketsService } from 'src/app/providers/tickets.service';
 export class ConfirmationComponent implements OnInit {
 
   /* Tickets info */
-  tickets=[]
+  tickets = []
   totalMoney = 0;
   ticketPrice = 0;
 
-  constructor(private router:Router, private formService:FormService, private ticketService:TicketsService) { }
+  constructor(private router: Router, private formService: FormService, private ticketService: TicketsService) { }
 
   ngOnInit(): void {
     this.tickets = [...this.formService.form['tickets']];
@@ -25,10 +25,13 @@ export class ConfirmationComponent implements OnInit {
 
   }
 
-  onSubmit(){
+  onSubmit() {
     console.log(this.formService.form)
-    let confirmationCode = this.ticketService.submitTickets(this.formService.form);
-    this.router.navigateByUrl(`payment/${confirmationCode}`);
+    this.ticketService.submitTickets(this.formService.form)
+      .subscribe(({ payment_iframe }) => {
+        console.log("payment_iframe",payment_iframe);
+        this.router.navigateByUrl(`payment/${payment_iframe}`);
+      });
   }
 
 }
