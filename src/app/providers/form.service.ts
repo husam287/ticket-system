@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class FormService {
 
-  form={};
+  form:any={};
   constructor() { }
 
 

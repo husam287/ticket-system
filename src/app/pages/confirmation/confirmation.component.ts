@@ -26,8 +26,22 @@ export class ConfirmationComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.formService.form)
-    this.ticketService.submitTickets(this.formService.form)
+    const form = this.formService.form;
+    console.log("final: ",this.formService.form);
+    const ticket = {
+      first_name: form.tickets[0].name.split(' ')[0],
+      last_name: form.tickets[0].name.split(' ')[1]?form.tickets[0].name.split(' ')[1]:'none',
+      email:form.tickets[0].email,
+      phone_number:form.tickets[0].phone,
+      year_of_birth:+form.tickets[0].yearOfBirth,
+      gender:form.tickets[0].gender,
+      race_type:form.members==='1'?'individual': form.members==='3'? 'triple':'five',
+      race_name:form.raceType.slice(1),
+      swimming_pace:form.tickets[0].pace,
+      team_name:form.name,
+      tshirt:form.tickets[0].shirtSize,
+    }
+    this.ticketService.submitTickets(ticket)
       .subscribe(({ payment_iframe }) => {
         console.log("payment_iframe",payment_iframe);
         this.router.navigateByUrl(`payment/${payment_iframe}`);

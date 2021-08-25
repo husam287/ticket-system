@@ -12,10 +12,11 @@ export class TicketsService {
   constructor(private http:HttpClient) { }
 
   submitTickets(form){
-    return this.http.post<any>(`${API_URL}/tickets/`,form)
+    return this.http.post<any>(`${API_URL}/ticket/`,form)
   }
 
   getTicketPrice(type){
     return this.prices[type]
   }
+
 }
